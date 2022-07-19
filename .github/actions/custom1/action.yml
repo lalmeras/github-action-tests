@@ -1,0 +1,17 @@
+---
+name: Custom action
+description: My custom action
+inputs:
+  arg1:
+    description: First argument
+    required: true
+    type: string
+    default: First value
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        ARG1: ${{ inputs.arg1 }}
+      run: |
+        echo "$ARG1"

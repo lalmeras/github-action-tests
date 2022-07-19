@@ -1,0 +1,15 @@
+---
+name: All pushes
+on:
+  - push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Hello world
+        run: |
+          echo '::group::Hello world'
+          echo 'blabla blabla'
+          echo '::endgroup::'
+      - uses: ./.github/actions/custom1
